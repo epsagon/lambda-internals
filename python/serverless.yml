@@ -1,0 +1,23 @@
+service: lambda-internals
+
+provider:
+  name: aws
+  runtime: python2.7
+  timeout: 300
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "s3:*"
+      Resource: "*"
+
+functions:
+  shell:
+    handler: handler.shell
+  download_code:
+    handler: handler.download_code
+  hello:
+    handler: instrumented.hello
+
+plugins:
+  - serverless-python-requirements
+
