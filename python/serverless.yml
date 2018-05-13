@@ -15,8 +15,14 @@ functions:
     handler: handler.shell
   download_code:
     handler: handler.download_code
+  send_report_end:
+    handler: handler.send_report_end
   hello:
     handler: instrumented.hello
+  reset_timeout:
+    handler: handler.reset_timeout
+    timeout: 12
+
 
 plugins:
   - serverless-python-requirements
